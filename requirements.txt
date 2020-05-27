@@ -1,5 +1,4 @@
 gunicorn>=19.7.1
-plotly>=2.0.9
 certifi==2019.6.16
 chardet==3.0.4
 Click==7.0
