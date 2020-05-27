@@ -79,4 +79,4 @@ def update_graph(County):
 
 # plotly.offline.plot(app, filename=r"G:\My Drive\99other_project_work\covid marketing support\test.html")
 if __name__ == '__main__':
-    app.server.run(debug=True, threaded=True)
+    app.server.run(debug=True)
