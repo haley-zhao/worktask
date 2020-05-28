@@ -16,6 +16,8 @@ geo = df["county names"].unique()
 
 app = dash.Dash()
 
+server = app.server
+
 app.layout = html.Div([
     html.H2("Congestion Changes during COVID-19"),
     html.Div(
