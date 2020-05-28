@@ -7,19 +7,17 @@ import dash
 import dash_core_components as dcc
 import dash_html_components as html
 
-# df = pd.read_excel(
-#     "G:\My Drive\99other_project_work\covid marketing support\wkCountyFCWk_pivot.xlsx" #to-do:change this line to where you saved wkCountyFCWk_pivot.xlsx
-# )
+# Read data
+df = pd.read_csv("data/app_source.csv")
 
-url = 'https://raw.githubusercontent.com/haley-zhao/worktask/master/app_source.csv'
-df = pd.read_csv(url, error_bad_lines=False)
+#url = 'https://raw.githubusercontent.com/haley-zhao/worktask/master/app_source.csv'
+#df = pd.read_csv(url, error_bad_lines=False)
 
 geo = df["county names"].unique()
 
 # Initiate the app
 app = dash.Dash(__name__)
 server = app.server
-app.title=tabtitle
 
 #app layout
 app.layout = html.Div([
