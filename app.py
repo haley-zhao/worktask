@@ -1,3 +1,5 @@
+
+# Import required libraries
 import pandas as pd
 import numpy as np
 import dash_core_components
@@ -14,10 +16,12 @@ df = pd.read_csv(url, error_bad_lines=False)
 
 geo = df["county names"].unique()
 
-app = dash.Dash()
-
+# Initiate the app
+app = dash.Dash(__name__)
 server = app.server
+app.title=tabtitle
 
+#app layout
 app.layout = html.Div([
     html.H2("Congestion Changes during COVID-19"),
     html.Div(
@@ -36,6 +40,7 @@ app.layout = html.Div([
 ])
 
 
+# App callback
 @app.callback(
     dash.dependencies.Output('funnel-graph', 'figure'),
     [dash.dependencies.Input('County', 'value')])
